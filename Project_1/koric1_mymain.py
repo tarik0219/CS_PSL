@@ -5,14 +5,15 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
+import time 
 
-#load files
-train = sys.argv[1]
-test = sys.argv[2]
+t0 = time.time()
+
+
 
 #read files into df
-df1 = pd.read_csv(train)
-df2 = pd.read_csv(test)
+df1 = pd.read_csv("train.csv")
+df2 = pd.read_csv("test.csv")
 
 #caputure pid values
 pid = df2[['PID']].to_numpy()
@@ -83,3 +84,6 @@ for i,p in enumerate(y_test):
     if i != num - 1:
         f.write("\n")
 f.close()
+
+t1 = time.time()
+print(t1-t0)
