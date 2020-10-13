@@ -6,13 +6,10 @@ import numpy as np
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
-#load files
-train = sys.argv[1]
-test = sys.argv[2]
 
 #read files into df
-df1 = pd.read_csv(train)
-df2 = pd.read_csv(test)
+df1 = pd.read_csv("train.csv")
+df2 = pd.read_csv("test.csv")
 
 #caputure pid values
 pid = df2[['PID']].to_numpy()

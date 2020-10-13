@@ -1,0 +1,3 @@
+intel(R) Core(TM) i7-6500U CPU @2.5 GHz 2.6GHz
+16.0 GB Ram
+91.55091714859009 seconds
