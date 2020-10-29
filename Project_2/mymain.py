@@ -8,11 +8,11 @@ def mypredict(train, test, new_test, t):
     df['year'] = pd.DatetimeIndex(df['Date']).year
     df['week'] = df['Date'].apply(lambda x: x.week)
     df["holiday"] = df['IsHoliday'].apply(lambda is_holiday:1 if is_holiday else 0)
+    
 
     X = df[['Store','Dept','week','holiday','year']].values
     y = df[['Weekly_Sales']].values
     reg = RandomForestRegressor(n_estimators=58, max_depth=27, max_features=4, min_samples_split=3, min_samples_leaf=1).fit(X, y)
-
     test["holiday"] = test['IsHoliday'].apply(lambda is_holiday:1 if is_holiday else 0)
     test['month'] = pd.DatetimeIndex(test['Date']).month
     test['year'] = pd.DatetimeIndex(test['Date']).year
