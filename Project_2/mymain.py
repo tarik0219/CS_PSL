@@ -10,7 +10,7 @@ warnings.filterwarnings(action='ignore', category=DataConversionWarning)
 
 
 
-def mypredict(train, test, new_test, t,i):
+def mypredict(train, test, new_test, t):
     
     
     df = pd.concat([train, new_test], join="inner",ignore_index = True)
@@ -25,7 +25,7 @@ def mypredict(train, test, new_test, t,i):
     y = df[['Weekly_Sales']].values
     
     
-    reg = RandomForestRegressor(n_estimators=57, max_depth=i, min_samples_split=3, random_state = 0).fit(X, y)
+    reg = RandomForestRegressor(random_state = 0).fit(X,y) #, max_depth=30, random_state = 0).fit(X, y)
     #reg = LinearRegression().fit(X,y)
     #reg = GradientBoostingRegressor(n_estimators=57, max_depth=27, max_features=5, min_samples_split=3, min_samples_leaf=1, random_state = 0).fit(X, y)
     

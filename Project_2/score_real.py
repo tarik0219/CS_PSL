@@ -12,8 +12,8 @@ next_fold = None
 wae = []
 # time-series CV
 for t in range(1, n_folds+1):
-    print(t)
     # *** THIS IS YOUR PREDICTION FUNCTION ***
+    print(t)
     train, test = mypredict(train, test, next_fold, t)
 
     # Load fold file

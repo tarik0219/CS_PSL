@@ -7,7 +7,7 @@ from mymain import mypredict
 
 # save weighed mean absolute error WMAE
 
-esitmators = [*range(20, 31, 1)]
+esitmators = [*range(10, 110, 10)]
 for i in esitmators:
     train = pd.read_csv('train_ini.csv', parse_dates=['Date'])
     test = pd.read_csv('test.csv', parse_dates=['Date'])
