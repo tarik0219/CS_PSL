@@ -25,9 +25,7 @@ def mypredict(train, test, new_test, t):
     y = df[['Weekly_Sales']].values
     
     
-    reg = RandomForestRegressor(random_state = 0).fit(X,y) #, max_depth=30, random_state = 0).fit(X, y)
-    #reg = LinearRegression().fit(X,y)
-    #reg = GradientBoostingRegressor(n_estimators=57, max_depth=27, max_features=5, min_samples_split=3, min_samples_leaf=1, random_state = 0).fit(X, y)
+    reg = RandomForestRegressor(random_state = 0).fit(X,y) 
     
     
     test["holiday"] = test['IsHoliday'].apply(lambda is_holiday:1 if is_holiday else 0)
