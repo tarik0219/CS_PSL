@@ -30,5 +30,8 @@ for t in range(1, n_folds+1):
 
     wae.append((np.sum(weights * np.abs(actuals - preds)) / np.sum(weights)).item())
 
+    if t == 5:
+        scoring_df.to_csv("test_5.csv", index=False)
+
 print(wae)
 print(sum(wae)/len(wae))
