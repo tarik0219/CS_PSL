@@ -25,7 +25,7 @@ def mypredict(train, test, new_test, t):
     y = df[['Weekly_Sales']].values
     
     
-    reg = RandomForestRegressor(random_state = 0).fit(X,y) 
+    reg = RandomForestRegressor(n_estimators = 100, random_state = 0).fit(X,y) 
     
     test["holiday"] = test['IsHoliday'].apply(lambda is_holiday:1 if is_holiday else 0)
     test['month'] = pd.DatetimeIndex(test['Date']).month

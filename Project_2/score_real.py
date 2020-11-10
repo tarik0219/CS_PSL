@@ -1,5 +1,9 @@
 import numpy as np
 import pandas as pd
+from time import time
+start_time = time()
+
+
 
 from mymain import mypredict
 
@@ -33,3 +37,6 @@ for t in range(1, n_folds+1):
 
 print(wae)
 print(sum(wae)/len(wae))
+end_time = time()
+time_taken = end_time - start_time
+print(time_taken)
